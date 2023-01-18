@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct chatAppApp: App {
+   
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(authVM: AuthViewModel())
         }
     }
 }

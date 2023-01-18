@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>319611236710-itqou2bhldn2d0p0fkj8o862ci4n90g6.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.319611236710-itqou2bhldn2d0p0fkj8o862ci4n90g6</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD9eHZABD0kJTvhj-9Z-GCU3mM1-9lTq6s</string>
+	<key>GCM_SENDER_ID</key>
+	<string>319611236710</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.lightphoenix.chatApp</string>
+	<key>PROJECT_ID</key>
+	<string>securiteb2efrei</string>
+	<key>STORAGE_BUCKET</key>
+	<string>securiteb2efrei.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:319611236710:ios:430ff7cf4811a82ec0d8a7</string>
+</dict>
+</plist>
