@@ -21,6 +21,7 @@
 		F628F85C2978517A003E2EA7 /* Utilisateur.swift in Sources */ = {isa = PBXBuildFile; fileRef = F628F85B2978517A003E2EA7 /* Utilisateur.swift */; };
 		F628F85E297851B9003E2EA7 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F628F85D297851B9003E2EA7 /* FirebaseManager.swift */; };
 		F628F860297856BE003E2EA7 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F628F85F297856BE003E2EA7 /* AuthViewModel.swift */; };
+		F6AAB24929788BF9003FA886 /* DashBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AAB24829788BF9003FA886 /* DashBoardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		F628F85B2978517A003E2EA7 /* Utilisateur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilisateur.swift; sourceTree = "<group>"; };
 		F628F85D297851B9003E2EA7 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		F628F85F297856BE003E2EA7 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		F6AAB24829788BF9003FA886 /* DashBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 		F628F858297850E2003E2EA7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F6AAB24829788BF9003FA886 /* DashBoardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				F628F860297856BE003E2EA7 /* AuthViewModel.swift in Sources */,
 				F628F85E297851B9003E2EA7 /* FirebaseManager.swift in Sources */,
 				F628F82829782E2F003E2EA7 /* ContentView.swift in Sources */,
+				F6AAB24929788BF9003FA886 /* DashBoardView.swift in Sources */,
 				F628F85C2978517A003E2EA7 /* Utilisateur.swift in Sources */,
 				F628F82629782E2F003E2EA7 /* chatAppApp.swift in Sources */,
 			);

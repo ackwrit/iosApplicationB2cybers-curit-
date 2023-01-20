@@ -11,79 +11,109 @@ struct ContentView: View {
     @StateObject var authVM : AuthViewModel
     @State var mail : String = ""
     @State var password : String = ""
+    @State var prenom : String = ""
+    @State var nom : String = ""
+    @State var tag = 0
     var body: some View {
-        if(authVM.isFinishConnecting){
-            VStack {
-             
-                //Logo
-              Image("fate")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 150, height: 150)
-                    .clipShape(Circle())
-                //titre
-                Text("Mon application")
-                    .font(.largeTitle)
-                    .foregroundColor(Color.red)
-                    .bold()
-             
+        
+            if(authVM.isFinishConnecting){
                 
-                
-                TextField("Entrer votre adresse",text:$mail)
-                    .font(.largeTitle)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                
-                SecureField("Entrer votre mot de passe ",text:$password)
-                    .font(.largeTitle)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                Spacer()
-                Button {
-                    //Se connecter
-                } label: {
-                    Text("Connexion")
-                        .padding()
-                        .foregroundColor(Color.white)
-                        .background {
-                            Color.purple
+                VStack {
+                 
+                    //Logo
+                  Image("fate")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 150, height: 150)
+                        .clipShape(Circle())
+                    //titre
+                    Text("Mon application")
+                        .font(.largeTitle)
+                        .foregroundColor(Color.red)
+                        .bold()
+                    
+                    Picker("choix",selection: $tag) {
+                        Text("Inscription").tag(0)
+                        Text("Connexion")
+                            .tag(1)
+                    }
+                    .pickerStyle(.segmented)
+                 
+                    
+                    
+                    TextField("adresse mail",text:$mail)
+                        .font(.largeTitle)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    
+                    SecureField("mot de passe",text:$password)
+                        .font(.largeTitle)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    
+                    VStack {
+                        if (tag == 0){
+                            TextField("Entrer votre nom",text:$nom)
+                                .font(.largeTitle)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                            
+                            
+                            TextField("Entrer votre prénom",text:$prenom)
+                                .font(.largeTitle)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
                         }
-                       
-                       
-                        .clipShape(Capsule())
-                }
-                Button {
-                    //Se connecter
-                } label: {
-                    Text("Inscription")
-                        .padding()
-                        .foregroundColor(Color.white)
-                        .background {
-                            Color.purple
+                   
+                    }
+                    Spacer()
+                    Button {
+                        if (tag == 0){
+                            authVM.CreateUser(mail: mail, password: password, prenom: prenom, nom: nom)
                         }
-                       
-                       
-                        .clipShape(Capsule())
-                }
+                    } label: {
+                        Text(tag == 0 ? "Inscription" : "Connexion")
+                            .padding()
+                            .foregroundColor(Color.white)
+                            .background {
+                                Color.purple
+                            }
+                           
+                           
+                            .clipShape(Capsule())
+                    }
+                    
+                      
+                    
 
-               
-                Spacer()
-               
+                  
+
+                   
+                    Spacer()
+                   
+                }
+                .alert(authVM.erroString, isPresented: $authVM.showError, actions: {
+                    Text("Ok")
+                })
+                .animation(.easeInOut, value: tag)
+                
+                
+                
+                
+                .padding()
+                .background {
+                   Image("soul_eater")
+                        .resizable()
+                       .aspectRatio(contentMode: .fill)
+                }
+                .edgesIgnoringSafeArea(.all)
+                
             }
-            
-            
-            
-            .padding()
-            .background {
-               Image("soul_eater")
-                    .resizable()
-                   .aspectRatio(contentMode: .fill)
+            else
+            {
+                VStack {
+                    Text("En cours de connection ... ")
+                }
+                
             }
-            .edgesIgnoringSafeArea(.all)
-            
         }
-        else
-        {
-            Text("En cours de connection ... ")
-        }
+      
 
        
         
@@ -91,7 +121,7 @@ struct ContentView: View {
         
         
         
-    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
