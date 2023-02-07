@@ -9,24 +9,44 @@ import Foundation
 import Firebase
 
 
+// La classe qui permet la connexion à la base de donnée
+
 class FirebaseManager {
     static let shared = FirebaseManager()
     
     var auth : Auth
+    var cloudFirestore : Firestore
     
     init() {
-        FirebaseApp.configure()
+        if FirebaseApp.app() == nil {
+            FirebaseApp.configure()
+        }
+        
         auth = Auth.auth()
+        cloudFirestore = Firestore.firestore()
     }
     
-    //Méthodes
+    var userRef : CollectionReference {
+        return cloudFirestore.collection("UTILISATEURS")
+    }
     
     
-    //Création d'un utilisateur
+    func addUser(uid : String , map :[String:Any]){
+        userRef.document(uid).setData(map)
+    }
     
+    func myId() -> String {
+        return auth.currentUser?.uid ?? ""
+        
+    }
     
-    //Connexion d'un utilisateur
+    func logOut(){
+        do {
+            try auth.signOut()
+        }catch{
+            print(error.localizedDescription)
+        }
+    }
     
-    
-    //Déconnexion d'un utilisateur
+
 }

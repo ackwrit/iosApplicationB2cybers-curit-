@@ -8,13 +8,25 @@
 import SwiftUI
 
 struct SectionRowView: View {
+    var image : String
+    var text : String
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationLink {
+            Text("Je vais vaire une autre page")
+        } label: {
+            HStack {
+                Image(systemName: image)
+                Text(text)
+            }
+        }
+
+       
     }
 }
 
 struct SectionRowView_Previews: PreviewProvider {
     static var previews: some View {
-        SectionRowView()
+        
+        SectionRowView(image: "globe", text: "coucou")
     }
 }

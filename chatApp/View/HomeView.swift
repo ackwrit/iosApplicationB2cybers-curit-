@@ -8,8 +8,31 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State var valeur : Int = 0
+    @StateObject var userVm = UserViewModel(id: FirebaseManager.shared.myId())
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            TabView(selection: $valeur) {
+                Text("coucou")
+                    .tabItem {
+                        Text("Personnes")
+                        Image(systemName: "person.fill")
+                    }
+                
+                Text("SALUT")
+                    .tabItem {
+                        Text("Favoris")
+                        Image(systemName: "heart")
+                    }
+                SettingsView(userVm: userVm)
+                    .tabItem {
+                        Text("Réglage")
+                        Image(systemName: "gear")
+                    }
+                
+            }
+        }
+        
     }
 }
 

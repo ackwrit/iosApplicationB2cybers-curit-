@@ -8,6 +8,9 @@
 import Foundation
 import Firebase
 
+
+//Classe qui lit tous qui s'opère sur la base de donnée
+
 class AuthViewModel : ObservableObject {
     var manager = FirebaseManager.shared
     
@@ -38,8 +41,10 @@ class AuthViewModel : ObservableObject {
     }
     
     //pour connecter l'utilisateur
-    func ConnectUser(){
-        
+    func ConnectUser(mail : String , password : String){
+        guard checkValue(mail, value: "mail") else {return}
+        guard checkValue(password, value: "mot de passe") else {return}
+        auth.signIn(withEmail: mail, password: password,completion: autoCompletion)
     }
     
     
@@ -50,7 +55,26 @@ class AuthViewModel : ObservableObject {
         guard checkValue(password, value: "mot de passe") else {return}
         guard checkValue(prenom, value: "prénom") else {return}
         guard checkValue(nom, value: "nom") else {return}
-        auth.createUser(withEmail: mail, password: password)
+        self.datas = ["MAIL" : mail , "PRENOM" : prenom,  "NOM" : nom]
+        auth.createUser(withEmail: mail, password: password,completion: autoCompletion)
+    }
+    
+    
+    func autoCompletion(dataResult : AuthDataResult?, error : Error?){
+        if let errorsLocal = error {
+            self.erroString = errorsLocal.localizedDescription
+            self.showError = true
+            return
+        }
+        
+        if let datas = dataResult {
+            let user = datas.user
+            let uid = user.uid
+            FirebaseManager().addUser(uid: uid, map: self.datas)
+        }
+        
+        
+        
     }
     
     func checkValue(_ string : String , value : String) -> Bool{
