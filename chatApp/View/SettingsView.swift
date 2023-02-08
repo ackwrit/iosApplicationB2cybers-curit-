@@ -10,7 +10,10 @@ import SwiftUI
 
 struct SettingsView: View {
     @State var bottomSheet = false
+    @State var fullImagesheet = false
     @State var prenom = ""
+    @State var nom = ""
+    @State var pseudo = ""
     @StateObject var userVm : UserViewModel
     var body: some View {
         NavigationView {
@@ -30,10 +33,23 @@ struct SettingsView: View {
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 50, height: 50)
                             .clipShape(Circle())
-                            .sheet(isPresented: $bottomSheet) {
+                            .sheet(isPresented: $fullImagesheet, content: {
+                                PHPPickerRepresentable { img in
+                                    print("J'ai les images")
+                                }
+                            })
+                            .confirmationDialog("changer l'image", isPresented: $bottomSheet, actions: {
+                                Button("Caméra") {
+                                    self.fullImagesheet = true
+                                }
                                 Text("Caméra")
-                                Text("Librarie")
-                            }
+                                Button {
+                                    self.fullImagesheet = true
+                                } label: {
+                                    Text("Librarie")
+                                }
+                            })
+                            
                     }
 
                     
@@ -56,10 +72,56 @@ struct SettingsView: View {
                     Section("Infomations"){
                         HStack {
                             TextField(userVm.users?.prenom ?? "", text: $prenom)
+                                
+                                
                             
                             Spacer()
-                            Image(systemName:"plus")
+                            Button {
+                                if (prenom != "") {
+                                    FirebaseManager.shared.UpadteUser(key: "PRENOM", datas: prenom)
+                                    prenom = ""
+                                }
+                            } label: {
+                                Image(systemName:"plus")
+                            }
+
+                            
                         }
+                        
+                        
+                        
+                        HStack {
+                            TextField(userVm.users?.nom ?? "", text: $nom)
+                            
+                            Spacer()
+                            Button {
+                                if (nom != "") {
+                                    FirebaseManager.shared.UpadteUser(key: "NOM", datas: nom)
+                                    nom = ""
+                                }
+                            } label: {
+                                Image(systemName:"plus")
+                            }
+
+                            
+                        }
+                        
+                        HStack {
+                            TextField(userVm.users?.pseudo ?? "", text: $pseudo)
+                            
+                            Spacer()
+                            Button {
+                                if (nom != "") {
+                                    FirebaseManager.shared.UpadteUser(key: "PSEUDO", datas: pseudo)
+                                    pseudo = ""
+                                }
+                            } label: {
+                                Image(systemName:"plus")
+                            }
+
+                            
+                        }
+
                     }
                     
                     Section("Réglages de l'app"){

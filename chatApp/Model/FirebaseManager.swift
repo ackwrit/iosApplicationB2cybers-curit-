@@ -40,6 +40,15 @@ class FirebaseManager {
         
     }
     
+    func getId() -> String{
+        return auth.currentUser?.uid ?? ""
+        
+    }
+    func UpadteUser(key : String ,datas : Any){
+        let id = getId()
+        userRef.document(id).updateData([key : datas])
+    }
+    
     func logOut(){
         do {
             try auth.signOut()

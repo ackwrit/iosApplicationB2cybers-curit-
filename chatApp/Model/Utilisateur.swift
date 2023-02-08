@@ -19,7 +19,13 @@ struct Utilisateur : Identifiable {
     
     var _mail : String?
     
+    var _pseudo : String?
+    
     //Ce n'est pas un getter , variable calculé
+    
+    var pseudo : String {
+        return _pseudo ?? ""
+    }
     var nom : String {
         return _nom ?? ""
     }
