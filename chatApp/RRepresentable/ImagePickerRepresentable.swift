@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SwiftUI
 
-struct ImagePickerRepresentable : UIViewControllerRepresentable{
+struct ImagePickerRepresentable : UIViewControllerRepresentable {
     @Environment(\.presentationMode) var isPres
     let image : (UIImage?) -> Void
     
@@ -21,7 +21,11 @@ struct ImagePickerRepresentable : UIViewControllerRepresentable{
         isPres.wrappedValue.dismiss()
     }
     
-    func makeUIViewController(context: Context) -> some UIImagePickerController {
+    
+    
+    
+    
+    func makeUIViewController(context: Context) -> UIImagePickerController {
         let picker = UIImagePickerController()
         picker.sourceType = .camera
         picker.allowsEditing = false
@@ -33,8 +37,8 @@ struct ImagePickerRepresentable : UIViewControllerRepresentable{
         print("mise à jour")
     }
     
-    func makeCoordinator() -> () {
-        print("coucou")
+    func makeCoordinator() -> ImagePickerCoordinator {
+        ImagePickerCoordinator(dismiss: dismiss, image: image)
     }
 }
 
@@ -43,6 +47,9 @@ class ImagePickerCoordinator : NSObject, UIImagePickerControllerDelegate,UINavig
     
     let dismiss: () -> Void
     let image: (UIImage?) -> Void
+    
+    
+
     
     
     init(dismiss: @escaping () -> Void, image: @escaping (UIImage?) -> Void) {

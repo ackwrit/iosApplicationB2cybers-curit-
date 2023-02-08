@@ -507,6 +507,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "ccéder image caméra";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "mon application souhaite accéder à vos photos";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "mon application souhaite accéder à vos photos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -539,6 +540,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "ccéder image caméra";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "mon application souhaite accéder à vos photos";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "mon application souhaite accéder à vos photos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

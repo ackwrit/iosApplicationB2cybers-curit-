@@ -9,6 +9,8 @@ import SwiftUI
 
 
 struct SettingsView: View {
+    @State var bottomSheet = false
+    @State var prenom = ""
     @StateObject var userVm : UserViewModel
     var body: some View {
         NavigationView {
@@ -19,11 +21,23 @@ struct SettingsView: View {
                     .frame(width:400,height: 200)
                 HStack {
                     Spacer()
-                    Image(systemName: "person.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 50, height: 50)
-                        .clipShape(Circle())
+                    Button {
+                        self.bottomSheet = true
+                    } label: {
+                        Image(systemName: "person.fill")
+                            
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 50, height: 50)
+                            .clipShape(Circle())
+                            .sheet(isPresented: $bottomSheet) {
+                                Text("Caméra")
+                                Text("Librarie")
+                            }
+                    }
+
+                    
+                        
                     Text(userVm.users?.nomComplet ?? "")
                         .fontWeight(.bold)
                         .font(.largeTitle)
@@ -40,7 +54,12 @@ struct SettingsView: View {
             
                 List {
                     Section("Infomations"){
-                        SectionRowView(image: "person.crop.circle", text: "contact")
+                        HStack {
+                            TextField(userVm.users?.prenom ?? "", text: $prenom)
+                            
+                            Spacer()
+                            Image(systemName:"plus")
+                        }
                     }
                     
                     Section("Réglages de l'app"){
