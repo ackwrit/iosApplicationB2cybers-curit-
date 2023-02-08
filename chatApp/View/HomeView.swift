@@ -13,7 +13,7 @@ struct HomeView: View {
     var body: some View {
         VStack {
             TabView(selection: $valeur) {
-                Text("coucou")
+                ContactView()
                     .tabItem {
                         Text("Personnes")
                         Image(systemName: "person.fill")

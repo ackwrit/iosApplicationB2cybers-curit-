@@ -33,9 +33,14 @@ struct SettingsView: View {
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 50, height: 50)
                             .clipShape(Circle())
-                            .sheet(isPresented: $fullImagesheet, content: {
+                            
+                            .sheet(isPresented: $fullImagesheet, onDismiss :{
+                                print("dismiss")
+                                
+                            } ,content: {
                                 PHPPickerRepresentable { img in
-                                    print("J'ai les images")
+                                    FirebaseManager.shared.upDateImage(image: img)
+                                   
                                 }
                             })
                             .confirmationDialog("changer l'image", isPresented: $bottomSheet, actions: {
