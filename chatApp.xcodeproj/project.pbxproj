@@ -21,6 +21,9 @@
 		F628F85C2978517A003E2EA7 /* Utilisateur.swift in Sources */ = {isa = PBXBuildFile; fileRef = F628F85B2978517A003E2EA7 /* Utilisateur.swift */; };
 		F628F85E297851B9003E2EA7 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F628F85D297851B9003E2EA7 /* FirebaseManager.swift */; };
 		F628F860297856BE003E2EA7 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F628F85F297856BE003E2EA7 /* AuthViewModel.swift */; };
+		F65463352996530000DE7267 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65463342996530000DE7267 /* Message.swift */; };
+		F65463372996541100DE7267 /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65463362996541100DE7267 /* MessageViewModel.swift */; };
+		F654633929965D7000DE7267 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F654633829965D7000DE7267 /* MessageView.swift */; };
 		F67C05D32992B13100223C1F /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67C05D22992B13100223C1F /* UserViewModel.swift */; };
 		F67C05D62992C05600223C1F /* ImagePickerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67C05D52992C05600223C1F /* ImagePickerRepresentable.swift */; };
 		F67C05D82992C08000223C1F /* PHPPickerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67C05D72992C08000223C1F /* PHPPickerRepresentable.swift */; };
@@ -29,6 +32,7 @@
 		F698BBDE297A96B300D9B445 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F698BBDD297A96B300D9B445 /* HomeView.swift */; };
 		F698BBE0297A9EF800D9B445 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F698BBDF297A9EF800D9B445 /* SettingsView.swift */; };
 		F698BBE4297AAD5700D9B445 /* SectionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F698BBE3297AAD5700D9B445 /* SectionRowView.swift */; };
+		F6D2944F299689B60074B659 /* AvataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2944E299689B60074B659 /* AvataView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,9 @@
 		F628F85B2978517A003E2EA7 /* Utilisateur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilisateur.swift; sourceTree = "<group>"; };
 		F628F85D297851B9003E2EA7 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		F628F85F297856BE003E2EA7 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		F65463342996530000DE7267 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		F65463362996541100DE7267 /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
+		F654633829965D7000DE7267 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		F67C05D22992B13100223C1F /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		F67C05D52992C05600223C1F /* ImagePickerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerRepresentable.swift; sourceTree = "<group>"; };
 		F67C05D72992C08000223C1F /* PHPPickerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHPPickerRepresentable.swift; sourceTree = "<group>"; };
@@ -71,6 +78,7 @@
 		F698BBDD297A96B300D9B445 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F698BBDF297A9EF800D9B445 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F698BBE3297AAD5700D9B445 /* SectionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionRowView.swift; sourceTree = "<group>"; };
+		F6D2944E299689B60074B659 /* AvataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvataView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +177,8 @@
 				F698BBDD297A96B300D9B445 /* HomeView.swift */,
 				F698BBDF297A9EF800D9B445 /* SettingsView.swift */,
 				F698BBE3297AAD5700D9B445 /* SectionRowView.swift */,
+				F654633829965D7000DE7267 /* MessageView.swift */,
+				F6D2944E299689B60074B659 /* AvataView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -178,6 +188,7 @@
 			children = (
 				F628F85B2978517A003E2EA7 /* Utilisateur.swift */,
 				F628F85D297851B9003E2EA7 /* FirebaseManager.swift */,
+				F65463342996530000DE7267 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -188,6 +199,7 @@
 				F628F85F297856BE003E2EA7 /* AuthViewModel.swift */,
 				F67C05D22992B13100223C1F /* UserViewModel.swift */,
 				F69615C32994125D00BCBD13 /* AllUserViewModel.swift */,
+				F65463362996541100DE7267 /* MessageViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -345,14 +357,18 @@
 				F628F85E297851B9003E2EA7 /* FirebaseManager.swift in Sources */,
 				F628F82829782E2F003E2EA7 /* ContentView.swift in Sources */,
 				F69615C62994166800BCBD13 /* ContactView.swift in Sources */,
+				F6D2944F299689B60074B659 /* AvataView.swift in Sources */,
 				F698BBDE297A96B300D9B445 /* HomeView.swift in Sources */,
 				F628F85C2978517A003E2EA7 /* Utilisateur.swift in Sources */,
+				F65463372996541100DE7267 /* MessageViewModel.swift in Sources */,
 				F67C05D82992C08000223C1F /* PHPPickerRepresentable.swift in Sources */,
 				F628F82629782E2F003E2EA7 /* chatAppApp.swift in Sources */,
 				F67C05D32992B13100223C1F /* UserViewModel.swift in Sources */,
 				F69615C42994125D00BCBD13 /* AllUserViewModel.swift in Sources */,
+				F654633929965D7000DE7267 /* MessageView.swift in Sources */,
 				F67C05D62992C05600223C1F /* ImagePickerRepresentable.swift in Sources */,
 				F698BBE4297AAD5700D9B445 /* SectionRowView.swift in Sources */,
+				F65463352996530000DE7267 /* Message.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

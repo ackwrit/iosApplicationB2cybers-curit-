@@ -82,5 +82,6 @@ class AuthViewModel : ObservableObject {
         self.showError = !isEmpty
         self.erroString = !isEmpty ? "Entrer votre \(value)": ""
         return isEmpty
+//
     }
 }

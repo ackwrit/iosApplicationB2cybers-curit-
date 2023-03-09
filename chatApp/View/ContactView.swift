@@ -10,10 +10,21 @@ import SwiftUI
 struct ContactView: View {
     @StateObject var allUsersVM = AllUserViewModel()
     var body: some View {
+        
         NavigationView {
             List {
                 ForEach(allUsersVM.allUser) { appUser in
-                    Text(appUser.prenom)
+                    NavigationLink {
+                        MessageView(destinataire: appUser.id, allMessages: MessageViewModel(id: appUser.id))
+                    } label: {
+                        HStack {
+                            
+                            Text(appUser.prenom)
+                        }
+                        
+                    }
+
+                    
                 }
             }
         }

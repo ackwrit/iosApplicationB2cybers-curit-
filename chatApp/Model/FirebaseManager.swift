@@ -38,11 +38,21 @@ class FirebaseManager {
         return storage.reference(withPath: "ImageProfils")
     }
     
+    var messageRef : CollectionReference {
+        return cloudFirestore.collection("MESSAGES")
+    }
+    
     
     
     
     func addUser(uid : String , map :[String:Any]){
         userRef.document(uid).setData(map)
+    }
+    
+    func addMessage(uid : String , map : [String : Any]){
+        let date = Date()
+        let id = uid + "\(date)"
+        messageRef.document(id).setData(map)
     }
     
     func myId() -> String {
